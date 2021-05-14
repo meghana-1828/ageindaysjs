@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+    <title>javascript</title>
+    <style>
+        .flex-box-container-1{
+            display: flex;
+            padding: 10px;
+            border:1px solid black;
+            justify-content: space-around;
+        }
+        .flex-box-container-1 div{
+            display: flex;
+            padding: 10px;
+            border:1px solid black;
+            align-items: center;
+        }
+        .container-1{
+            border: 2px solid black;
+            width: 65%;
+            margin: 0 auto;
+            align-items: center;
+            /*justify-content: center;*/
+        }
+                .container-2{
+            border: 2px solid black;
+            width: 65%;
+            margin: 0 auto;
+            align-items: center;
+            /*justify-content: center;*/
+        }
+        .flex-box-container-2{
+            display: flex;
+            /*flex-wrap: wrap;*/
+            justify-content: space-around;
+            border:1px solid blue;
+            overflow: hidden;
+            /*width: 50%;*/
+        }
+        .flex-box-container-2 div{
+            display: flex;
+            padding: 10px;
+            border:1px solid black;
+            align-items: center;
+        }
+        .flex-box1{
+            width: auto;
+            overflow: hidden;
+            position: top-center;
+            /*height:50px;*/
+        }
+        .flex-box-container-2 img{
+            box-shadow: 8px 10px 50px rgba(0,0,0,0.7);
+            padding: 10px;
+            height: 30%;
+        }
+        .flex-box-result1{
+            width: 50px;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container-1">
+        <center><h2>1st challenge</h2></center>
+        <div class="flex-box-container-1">
+            <div>
+                <button class="btn btn-primary" onclick="ageInDays()">click me</button>
+            </div>
+            <div>
+                <button class="btn btn-danger" onclick="reset()">reset</button>
+            </div>
+        </div>
+        <div class="flex-box-container-1">
+            <div id="flex-box-result" >
+                
+            </div>
+            
+        </div>
+    </div>    
+    <div class="container-2">
+        <center><h2>1st challenge</h2></center> 
+        
+        <div class="flex-box-container-2" id="cat">
+            <div>
+                <button class="btn btn-success" id="cat-generator" onclick="generatecat()"> generate cat</button>
+            </div>
+            <div>
+                <button class="btn btn-danger" onclick="reset1()">reset</button>
+            </div>
+        </div>    
+            <div class="flex-box1">
+                <div id="flex-box-result1" ></div>
+                
+            </div>
+            
+        <!-- </div> -->
+        </div>    
+        
+    </div>
+    <script>
+    function ageInDays(){
+        var birthyear=prompt("what year were you born");
+        var ageInDayss=(2020-birthyear)*365;
+        var h1=document.createElement("h1");
+        var textAnswer=document.createTextNode("you are "+ageInDayss+"days old.");
+        h1.setAttribute('id','ageInDays');
+        h1.appendChild(textAnswer);
+        document.getElementById("flex-box-result").appendChild(h1);
+        // document.getElementById("flex-box-result").appendChild(h1);
+        // ================================
+        // document.getElementById("flex-box-result").innerHTML="your are " + ageInDayss +" days old";
+        
+        }
+        function reset(){
+            document.getElementById("ageInDays").remove();
+        
+
+        }
+    </script>
+    <script >
+        // function picture(){ 
+        // var pic = "https://images-na.ssl-images-amazon.com/images/I/81NGXVSGWFL.png";
+        // document.getElementById('bigpic').src = pic.replace('90x90', '225x225');
+        // document.getElementById('bigpic').style.display='block';
+
+        // }
+        // function reset1(){
+        //     document.getElementById('bigpic').remove();
+        // }
+        function generatecat(){
+            var image=document.createElement('img');
+            var div=document.getElementById('flex-box-result1');
+            image.src="https://images-na.ssl-images-amazon.com/images/I/81NGXVSGWFL.png" ;
+            div.appendChild(image);
+        }
+        function reset1(){
+            document.getElementById('flex-box-result1').remove();
+        }
+    </script>   
+        
+    
+</body>
+</html>
